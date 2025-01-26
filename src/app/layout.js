@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import TopBar from "./Compnents/TopBar";
+import SideBar from "./Compnents/SideBar";
+import { FormProvider } from "./Compnents/FormContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +25,23 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+       <FormProvider>
+       <div>
+          <TopBar />
+        </div>
+
+        <div className="w-full h-auto flex flex-row gap-x-6">
+
+        <div className="w-[15%] md:w-[20%] px-2">
+          <SideBar />
+        </div>
+
+        <div className="w-[85%] md:w-[80%]">
         {children}
+        </div>
+
+        </div>
+       </FormProvider>
       </body>
     </html>
   );
