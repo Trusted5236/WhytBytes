@@ -30,13 +30,13 @@ export default function RootLayout({ children }) {
           <TopBar />
         </div>
 
-        <div className="w-full h-auto flex flex-row gap-x-6">
+        <div className="w-full h-auto flex flex-row ">
 
-        <div className="w-[15%] md:w-[20%] px-2">
+        <div className="w-[17%] md:w-[20%]">
           <SideBar />
         </div>
 
-        <div className="w-[85%] md:w-[80%]">
+        <div className="w-[83%] md:w-[80%] px-4">
         {children}
         </div>
 
